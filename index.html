@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive CSS Layouts Assignment-week 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>CSS Layouts & Responsive Web Design</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Layout: Grid -->
+    <div class="main-grid">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>About Me</li>
+                <li>Categories</li>
+                <li>Archives</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <section>
+                <h2>Welcome to Modern CSS Layouts</h2>
+                <p>
+                    This page demonstrates <strong>CSS Grid</strong> for the overall layout and <strong>Flexbox</strong> for cards and navigation. Resize the browser to see how the layout adapts!
+                </p>
+            </section>
+            <section class="cards-section">
+                <h2>Featured Projects</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Project One</h3>
+                        <p>A responsive card using Flexbox. Adjusts size and arrangement with screen width.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Project Two</h3>
+                        <p>Another card. Flexbox makes horizontal or vertical layouts easy.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Project Three</h3>
+                        <p>Cards stack neatly on mobile devices.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="grid-gallery-section">
+                <h2>Gallery (CSS Grid Example)</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">1</div>
+                    <div class="gallery-item">2</div>
+                    <div class="gallery-item">3</div>
+                    <div class="gallery-item">4</div>
+                    <div class="gallery-item">5</div>
+                    <div class="gallery-item">6</div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
