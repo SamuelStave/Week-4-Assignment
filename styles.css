@@ -1,0 +1,252 @@
+/* 
+    style.css
+    Responsive layout using CSS Grid, Flexbox, and media queries
+    Author: SamuelStave
+    -----------------------------------
+*/
+
+/* ========== Reset & Base Styles ========== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f8fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #2757c6;
+    transition: color 0.2s;
+}
+a:hover {
+    color: #163267;
+}
+
+/* ========== Header & Navigation (Flexbox) ========== */
+.header {
+    background: #2757c6;
+    color: #fff;
+    padding: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for nav bar */
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+    color: #fff;
+    background: #3b77e3;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.nav a:hover {
+    background: #173e7c;
+}
+
+/* ========== Main Layout: CSS Grid ========== */
+.main-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #e3eafc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    min-width: 180px;
+    max-width: 300px;
+    box-shadow: 0 2px 8px #2757c620;
+}
+.sidebar h2 {
+    color: #2757c6;
+    font-size: 1.2rem;
+}
+.sidebar ul {
+    list-style: disc inside;
+    color: #274b8d;
+    font-size: 1rem;
+    padding-left: 0;
+}
+.sidebar li {
+    margin-bottom: 0.8rem;
+}
+
+/* Main Content */
+.content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 12px #2757c615;
+}
+
+.cards-section {
+    margin: 2.5rem 0;
+}
+.cards-section h2 {
+    font-size: 1.3rem;
+    color: #2757c6;
+    margin-bottom: 1rem;
+}
+
+/* ========== Flexbox Cards ========== */
+.card-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    background: #f1f5fb;
+    border: 2px solid #bcd5fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    min-width: 220px;
+    max-width: 350px;
+    flex: 1 1 220px;
+    box-shadow: 0 1px 8px #274b8d20;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 4px 16px #274b8d33;
+}
+.card h3 {
+    color: #173e7c;
+    margin-bottom: 0.7rem;
+}
+
+/* ========== Gallery: CSS Grid ========== */
+.grid-gallery-section {
+    margin: 2.5rem 0;
+}
+.grid-gallery-section h2 {
+    font-size: 1.3rem;
+    color: #2757c6;
+    margin-bottom: 1rem;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+}
+.gallery-item {
+    background: #3b77e3;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 8px #2757c633;
+    transition: background 0.15s;
+}
+.gallery-item:hover {
+    background: #173e7c;
+}
+
+/* ========== Footer ========== */
+.footer {
+    background: #e3eafc;
+    color: #2757c6;
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+}
+
+/* ========== Media Queries ========== */
+
+/* Tablet: Stack sidebar on top */
+@media (max-width: 900px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .sidebar {
+        max-width: 100%;
+        min-width: 0;
+    }
+    .content {
+        padding: 1.5rem 1rem;
+    }
+    .card-container {
+        gap: 1rem;
+    }
+    .gallery-grid {
+        gap: 0.7rem;
+    }
+}
+
+/* Mobile: Narrow padding, stack cards and grid items */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    .main-grid {
+        padding: 0 0.2rem;
+    }
+    .sidebar,
+    .content {
+        padding: 1rem 0.3rem;
+    }
+    .card-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .card {
+        min-width: 0;
+        width: 97%;
+        padding: 1rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+    .gallery-item {
+        font-size: 1.1rem;
+        height: 65px;
+    }
+    .footer {
+        font-size: 0.95rem;
+        padding: 0.8rem 0;
+    }
+}
+
+/* ========== End of style.css ========== */
